@@ -5,6 +5,15 @@ This project provides a backend for the fantastic [angular-filemanager](https://
 **CAUTION: This project is currently not mainted!
 If you want to take over this project or you already developed a better implementation, please send me a message and I will link to your project.**
 
+## Recent Changes
+
+I recently clone the original repo and I was surprised this project has not changed during 2 years... So, I decided to fork this project to allow everyone to get the new features that were not implemented yet.
+
+### New Features
+
+* Download multiple files (zip file)
+* Copy single or multiple files
+
 ## Features
 
 Currently the following operations are (partially) implemented:
