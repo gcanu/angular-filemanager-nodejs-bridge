@@ -9,16 +9,16 @@ process.env.PORT = process.env.PORT || 5000;
 process.env.DATA_DIR = process.env.DATA_DIR || '/data';
 
 try {
-  fs.accessSync(process.env.DATA_DIR, fs.R_OK | fs.X_OK);
-} catch(err) {
-  console.error('Cannot access directory %s. Maybe it does not exist?. Please specify a valid data directory by using the environment variable DATA_DIR.', process.env.DATA_DIR);
-  process.exit(1);
+    fs.accessSync(process.env.DATA_DIR, fs.R_OK | fs.X_OK);
+} catch (err) {
+    console.error('Cannot access directory %s. Maybe it does not exist?. Please specify a valid data directory by using the environment variable DATA_DIR.', process.env.DATA_DIR);
+    process.exit(1);
 }
 
 var dataDirStats = fs.statSync(process.env.DATA_DIR);
-if(!dataDirStats.isDirectory()) {
-  console.error('%s is not a directory. Please specify a valid data directory by using the environment variable DATA_DIR.', process.env.DATA_DIR);
-  process.exit(1);
+if (!dataDirStats.isDirectory()) {
+    console.error('%s is not a directory. Please specify a valid data directory by using the environment variable DATA_DIR.', process.env.DATA_DIR);
+    process.exit(1);
 }
 
 var app = express();
@@ -30,8 +30,8 @@ require('./config/express')(app);
 app.use(require('./routes'));
 
 // Start server
-server.listen(process.env.PORT, function() {
-  console.info('Server started on port %d serving directory %s! Waiting for requests...', process.env.PORT, process.env.DATA_DIR);
+server.listen(process.env.PORT, function () {
+    console.info('Server started on port %d serving directory %s! Waiting for requests...', process.env.PORT, process.env.DATA_DIR);
 });
 
 module.exports.app = app;

@@ -11,14 +11,13 @@ var compression = require('compression');
 /**
  * Express configuration
  */
-module.exports = function(app) {
-	var env = app.get('env');
+module.exports = function (app) {
+    var env = app.get('env');
 
-	// Logging
-	app.use(morgan('dev'));
+    // Logging
+    app.use(morgan('dev'));
 
-	app.use(bodyParser.json());
-	app.use(timeout('5s'));
-	app.use(compression());
-	app.use(cors());
+    app.use(bodyParser.json());
+    app.use(compression());
+    app.use(cors());
 };
