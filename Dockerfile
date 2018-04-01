@@ -1,5 +1,7 @@
-FROM node:4
-MAINTAINER Fabian Köster <koesterreich@fastmail.fm>
+FROM node:8
+
+LABEL maintainer="Fabian Köster <koesterreich@fastmail.fm>"
+LABEL maintainer="Guillaume Canu <gcanu@softgestion-sas.fr>"
 
 # Copy over package.json
 ADD package.json ./
@@ -14,6 +16,6 @@ ADD . ./
 CMD node server.js
 
 # The port(s) the web application uses
-EXPOSE 5000
+EXPOSE 80
 
 VOLUME /data
