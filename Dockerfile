@@ -18,4 +18,4 @@ CMD node server.js
 # The port(s) the web application uses
 EXPOSE 80
 
-VOLUME /data
+VOLUME /filesystem
